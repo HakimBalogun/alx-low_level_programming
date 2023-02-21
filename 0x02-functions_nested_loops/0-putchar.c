@@ -1,6 +1,11 @@
 #include "main.h"
 /**
- * main: Prints "_putcher" to stdout.
+ * main - Prints "_putcher" to stdout.
+ *
+ * Description: The function _putchar is used to print characters
+ * to the standard output.
+ * This will print the word "_putchar"
+ *
  * Return: 0
  */
 int main(void)
