@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+/**
+ *  main - Complete the code to print the
+ *  required output.
+ *
+ *  Return: 0.
+ */
+
 int main(void)
 {
 	int n;
