@@ -56,7 +56,7 @@ void print_magic(unsigned char *e_ident)
 
 	for (index = 0; index < EI_NIDENT; index++)
 	{
-		printf("%02x", e_ident[index]);
+		printf("\t%02x", e_ident[index]);
 
 		if (index == EI_NIDENT - 1)
 			printf("\n");
@@ -78,16 +78,16 @@ void print_class(unsigned char *e_ident)
 	switch (e_ident[EI_CLASS])
 	{
 		case ELFCLASSNONE:
-			printf("none\n");
+			printf("\tnone\n");
 			break;
 		case ELFCLASS32:
-			printf("ELF32\n");
+			printf("\tELF32\n");
 			break;
 		case ELFCLASS64:
-			printf("ELF64\n");
+			printf("\tELF64\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+			printf("\t<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
 
@@ -104,16 +104,16 @@ void print_data(unsigned char *e_ident)
 	switch (e_ident[EI_DATA])
 	{
 		case ELFDATANONE:
-			printf("none\n");
+			printf("\tnone\n");
 			break;
 		case ELFDATA2LSB:
-			printf("2's complement, little endian\n");
+			printf("\t2's complement, little endian\n");
 			break;
 		case ELFDATA2MSB:
-			printf("2's complement, big endian\n");
+			printf("\t2's complement, big endian\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+			printf("\t<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
 
@@ -152,37 +152,37 @@ void print_osabi(unsigned char *e_ident)
 	switch (e_ident[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
-			printf("UNIX - System V\n");
+			printf("\tUNIX - System V\n");
 			break;
 		case ELFOSABI_HPUX:
-			printf("UNIX - HP-UX\n");
+			printf("\tUNIX - HP-UX\n");
 			break;
 		case ELFOSABI_NETBSD:
-			printf("UNIX - NetBSD\n");
+			printf("\tUNIX - NetBSD\n");
 			break;
 		case ELFOSABI_LINUX:
-			printf("UNIX - Linux\n");
+			printf("\tUNIX - Linux\n");
 			break;
 		case ELFOSABI_SOLARIS:
-			printf("UNIX - Solaris\n");
+			printf("\tUNIX - Solaris\n");
 			break;
 		case ELFOSABI_IRIX:
-			printf("UNIX - IRIX\n");
+			printf("\tUNIX - IRIX\n");
 			break;
 		case ELFOSABI_FREEBSD:
-			printf("UNIX - FreeBSD\n");
+			printf("\tUNIX - FreeBSD\n");
 			break;
 		case ELFOSABI_TRU64:
-			printf("UNIX - TRU64\n");
+			printf("\tUNIX - TRU64\n");
 			break;
 		case ELFOSABI_ARM:
-			printf("ARM\n");
+			printf("\tARM\n");
 			break;
 		case ELFOSABI_STANDALONE:
-			printf("Standalone App\n");
+			printf("\tStandalone App\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
+			printf("\t<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
 }
 
@@ -215,22 +215,22 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	switch (e_type)
 	{
 		case ET_NONE:
-			printf("NONE (None)\n");
+			printf("\tNONE (None)\n");
 			break;
 		case ET_REL:
-			printf("REL (Relocatable file)\n");
+			printf("\tREL (Relocatable file)\n");
 			break;
 		case ET_EXEC:
-			printf("EXEC (Executable file)\n");
+			printf("\tEXEC (Executable file)\n");
 			break;
 		case ET_DYN:
-			printf("DYN (Shared object file)\n");
+			printf("\tDYN (Shared object file)\n");
 			break;
 		case ET_CORE:
-			printf("CORE (Core file)\n");
+			printf("\tCORE (Core file)\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_type);
+			printf("\t<unknown: %x>\n", e_type);
 	}
 }
 
@@ -253,10 +253,10 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 	}
 
 	if (e_ident[EI_CLASS] == ELFCLASS32)
-		printf("%#x\n", (unsigned int)e_entry);
+		printf("\t%#x\n", (unsigned int)e_entry);
 
 	else
-		printf("%#lx\n", e_entry);
+		printf("\t%#lx\n", e_entry);
 }
 
 /**
