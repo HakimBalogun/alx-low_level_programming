@@ -1,2 +1,2 @@
-## Alx-low_level_programming Repo
-This is the repo for the 0x00. C - Hello, World (and maybe more other ones) project.
+## Alx - Low-level Programming
+This is the repo for my alx-low_level_programming projects. It contains files and directories of all tasks for the C programming sprint.
